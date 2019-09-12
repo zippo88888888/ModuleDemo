@@ -1,0 +1,7 @@
+<resources>
+
+    <item name="BaseDBAdapter_DataBinding_Tag" type="id"/>
+
+    <string name="app_name">ModuleBase</string>
+    <string name="china_money">￥</string>
+</resources>

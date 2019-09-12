@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userInfoViewModel"
+            type="com.zp.module_user.view_model.UserInfoViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.UserInfoActivity">
+
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_tool_bar" />
+
+        <Button
+            android:id="@+id/user_info_titleTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="购物车"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include" />
+
+        <Button
+            android:id="@+id/user_info_fileBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="跳转文件模块"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_info_titleTxt"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

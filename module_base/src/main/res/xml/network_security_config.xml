@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <!-- https://blog.csdn.net/AlexYoung28/article/details/82728946 -->
+    <base-config cleartextTrafficPermitted="true" />
+
+</network-security-config>

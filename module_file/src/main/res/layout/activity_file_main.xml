@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="fileMainViewModel"
+            type="com.zp.module_file.view_model.FileMainViewModel" />
+
+        <variable
+            name="dowloadBean"
+            type="com.zp.module_base.bean.DowloadBean" />
+
+        <variable
+            name="cacheSize"
+            type="String" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.FileMainActivity">
+
+        <include
+            android:id="@+id/include2"
+            layout="@layout/layout_tool_bar" />
+
+        <Button
+            android:id="@+id/fileMain_dowloadBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->fileMainViewModel.onClick(v)}"
+            android:text="下载数据"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+        <ProgressBar
+            android:id="@+id/fileMain_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="@{dowloadBean.dowloadProgress}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_dowloadBtn" />
+
+        <TextView
+            android:id="@+id/fileMain_dowloadLeftTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{dowloadBean.leftSizeStr}"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/fileMain_dowloadRightTxt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_bar"
+            tools:text="10MB/100MB" />
+
+        <TextView
+            android:id="@+id/fileMain_dowloadRightTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dowloadBean.rightSizeStr}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@+id/fileMain_dowloadLeftTxt"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_bar"
+            tools:text="10%/100%" />
+
+        <Button
+            android:id="@+id/fileMain_getCacheSizeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->fileMainViewModel.onClick(v)}"
+            android:text="获取缓存大小"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_dowloadRightTxt" />
+
+        <Button
+            android:id="@+id/fileMain_clearCacheBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(v)->fileMainViewModel.onClick(v)}"
+            android:text="清除缓存"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_getCacheSizeBtn" />
+
+        <TextView
+            android:id="@+id/fileMain_cacheSizeTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{cacheSize}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fileMain_clearCacheBtn"
+            tools:text="100MB" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

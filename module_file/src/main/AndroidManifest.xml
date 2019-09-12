@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zp.module_file" >
+
+    <application>
+        <activity android:name=".view.FileMainActivity" />
+    </application>
+
+</manifest>
