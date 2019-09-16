@@ -8,11 +8,8 @@ import com.zp.module_base.common.BaseActivity
 import com.zp.module_base.common.BaseModel
 import com.zp.module_base.common.BaseViewModelImpl
 import com.zp.module_base.content.Routes
-import com.zp.module_base.content.jumpActivity
 import com.zp.module_base.util.L
 import com.zp.module_demo.databinding.ActivityMainBinding
-import com.zp.module_file.view.FileMainActivity
-import com.zp.module_user.view.UserInfoActivity
 
 @Route(path = Routes.APP_ROUTE_MAIN)
 class MainActivity : BaseActivity<MainModel, ActivityMainBinding, MainViewModel>() {
