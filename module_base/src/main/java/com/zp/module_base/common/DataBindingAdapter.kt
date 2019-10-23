@@ -31,11 +31,11 @@ abstract class DataBindingAdapter<VDB : ViewDataBinding, T>(layoutId: Int) :
         this.datas = data
     }
 
-    open fun setData(data: List<T>) {
-        this.datas = datas
+    open fun setData(data: MutableList<T>) {
+        this.datas = data
     }
 
-    open fun addData(data: List<T>) {
+    open fun addData(data: MutableList<T>) {
         if (this.datas.addAll(data)) {
             notifyDataSetChanged()
         }

@@ -151,7 +151,7 @@ suspend fun runUI(block: (CoroutineScope) -> Unit) {
 }
 
 /**
- * 使用协程 让请求（异步）完成后再继续下面的操作
+ * 使用协程 让 网络请求 完成后再继续下面的操作
  */
 suspend fun <T> Call<T>.await(): T {
     return suspendCoroutine {

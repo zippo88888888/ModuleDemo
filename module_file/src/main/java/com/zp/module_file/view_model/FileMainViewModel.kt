@@ -36,8 +36,12 @@ class FileMainViewModel : BaseViewModelImpl<FileMainModel, String>() {
                 }
             }
             R.id.fileMain_clearCacheBtn -> {
-                MyFileUtil.deleteCache {
-                    refreshData.value = "清除成功"
+                if (isDowloading) {
+                    showToast("下载中，请稍后...")
+                } else {
+                    MyFileUtil.deleteCache {
+                        refreshData.value = "清除成功"
+                    }
                 }
             }
         }
